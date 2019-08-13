@@ -19,6 +19,7 @@ phases:
       unwind: 1
       string-input-value: ["foo", "a/b/c", "a'b'c", ",", "/", "'"]
       java-assume-inputs-interval: "[2:999999]"
+      java-assume-inputs-integral: true
       do-not-test-methods-with-access: [private]
       cover-function-only: false
       cover-only: file
@@ -34,6 +35,7 @@ phases:
       unwind: 1
       string-input-value: ["foo", "Bar", "BAZ"]
       java-assume-inputs-interval: "[-999999:-2]"
+      java-assume-inputs-integral: true
       do-not-test-methods-with-access: [private]
       cover-function-only: false
       cover-only: file 
