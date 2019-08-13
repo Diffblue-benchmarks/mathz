@@ -29,8 +29,8 @@ phases:
       classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
       smart-harness: simplest-constructor-and-nondet
       java-assume-inputs-non-null: true
-      max-nondet-array-length: 30
-      max-nondet-string-length: 30
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
       throw-runtime-exceptions: false
       unwind: 2
       do-not-test-methods-with-access: [private]
