@@ -1,0 +1,114 @@
+# This file was automatically generated using script in dashboard/scripts/update-diffblue-yml
+# It is a combination of the local diffblue-base.yml and the yml file in dashboard/scripts/update-diffblue-yml
+# Do not change any of the values manually to keep options uniform across all benchmarks
+skipVerification: true
+cbmcArguments:
+  java-max-vla-length: 100000
+  depth: false
+  java-test-input-factory: false
+  java-test-input-factory-bmc-max-mutators: false
+  java-test-input-factory-bmc-recursion-limit: false
+phases:
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      smart-harness: simplest-constructor-and-nondet
+      java-assume-inputs-non-null: true
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+    nextPhase:
+      not_analyzed: null
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: true
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+    nextPhase:
+      time_out: 4
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      max-nondet-array-length: 20
+      max-nondet-string-length: 50
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 2
+    nextPhase:
+      time_out: 4
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
+  - timeout: 100
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      paths: fifo
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: false
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: true
+      load-containing-class-only: true
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      load-containing-class-only: true
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      load-containing-class-only: true
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      string-printable: false
+      throw-runtime-exceptions: false
+      unwind: 15
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: true
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      single-function-only: true
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+  - timeout: 150
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      java-assume-inputs-non-null: false
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      single-function-only: true
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
